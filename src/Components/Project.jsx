@@ -60,15 +60,18 @@ function Project() {
     },
   ];
   return (
-    <section className="my-[20px]">
+    <section className="my-[50px]">
       <h1 className="md:text-[45px] text-[35px] font-bold  text-center">
         My Projects
       </h1>
-      <div className="w-[15%] h-[4px] mx-auto bg-blue-600 md:my-[10px] my-[5px] md:mb-[50px] mb-[20px]"></div>
+      <div className="w-[15%] h-[4px] mx-auto bg-blue-600 "></div>
       <div className="flex justify-center items-center flex-wrap ">
         {obj.map((element) => {
           return (
-            <div className=" flex flex-col  p-[10px] md:w-[310px] w-[80%] bg-white md:m-[20px] m-[10px] rounded-[15px]">
+            <div
+              key={element.id}
+              className=" flex flex-col  p-[10px] md:w-[310px] w-[80%] bg-white md:m-[20px] m-[10px] rounded-[15px] hover:scale-110 duration-100"
+            >
               <a href="" className="">
                 <img
                   className="w-[100%] h-[160px] "

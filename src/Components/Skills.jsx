@@ -36,8 +36,6 @@ function Skills() {
         "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png",
       name: "React js",
     },
-  ];
-  const icon1 = [
     {
       id: 11,
       imgurl: "https://upload.wikimedia.org/wikipedia/commons/4/49/Redux.png",
@@ -73,9 +71,6 @@ function Skills() {
         "https://static-00.iconduck.com/assets.00/database-mysql-icon-462x512-6itsq0zm.png",
       name: "MySql",
     },
-  ];
-
-  const icon2 = [
     {
       id: 12,
       imgurl:
@@ -102,13 +97,13 @@ function Skills() {
   ];
 
   return (
-    <section className="my-[20px] ">
+    <section className="mt-[50px] ">
       <h1 className="md:text-[45px] text-[35px] font-bold  text-center">
         Skills
       </h1>
-      <div className="w-[15%] h-[4px] mx-auto bg-blue-600 md:my-[5px] my-[5px] md:mb-[30px] mb-[20px]"></div>
-      <div className="max-w-[1400px] mx-auto flex flex-col  ">
-        <div className=" flex justify-around items-center flex-wrap p-[20px] md:gap-0 gap-5 ">
+      <div className="w-[9%] h-[4px] mx-auto bg-blue-600 "></div>
+      <div className="max-w-[1400px] mx-auto  ">
+        <div className=" flex justify-evenly items-center flex-wrap p-[20px]  md:gap-10 gap-3 ">
           {icons.map((element) => {
             return (
               <div
@@ -116,49 +111,11 @@ function Skills() {
                 className="bg-white p-[10px] rounded-[10px]  hover:text-blue-600 font-bold"
               >
                 <img
-                  className="md:h-[80px] md:w-[80px] h-[70px] w-[70px] hover:scale-110 "
+                  className="md:h-[80px] md:w-[80px] h-[50px] w-[50px] hover:scale-110 "
                   src={element.imgurl}
                   alt={element.name}
                 />
-                <h1 className="text-center md:text-[15px] text-[12px]">
-                  {element.name}
-                </h1>
-              </div>
-            );
-          })}
-        </div>
-        <div className=" flex justify-around items-center flex-wrap p-[20px] md:gap-0 gap-5  ">
-          {icon1.map((element) => {
-            return (
-              <div
-                key={element.id}
-                className="bg-white p-[10px] rounded-[10px]  hover:text-blue-600 font-bold"
-              >
-                <img
-                  className="md:h-[80px] md:w-[80px] h-[70px] w-[70px] hover:scale-110"
-                  src={element.imgurl}
-                  alt={element.name}
-                />
-                <h1 className="text-center md:text-[15px] text-[12px]">
-                  {element.name}
-                </h1>
-              </div>
-            );
-          })}
-        </div>
-        <div className=" flex justify-around items-center flex-wrap p-[20px] md:gap-0 gap-5  ">
-          {icon2.map((element) => {
-            return (
-              <div
-                key={element.id}
-                className="bg-white p-[10px] rounded-[10px]  hover:text-blue-600 font-bold "
-              >
-                <img
-                  className="md:h-[80px] md:w-[80px] h-[70px] w-[70px] hover:scale-110"
-                  src={element.imgurl}
-                  alt={element.name}
-                />
-                <h1 className="text-center md:text-[15px] text-[12px]">
+                <h1 className="text-center md:text-[15px] text-[10px]">
                   {element.name}
                 </h1>
               </div>

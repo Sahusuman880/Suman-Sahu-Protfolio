@@ -37,7 +37,7 @@ function Banner1() {
           {icons.map((element) => {
             return (
               <li className="rounded-[50%] bg-blue-600 p-[10px] hover:bg-blue-400 delay-200">
-                <a className="hover:invert" href={element.link}>
+                <a className="hover:invert" href={element.link} target="_blank">
                   {element.icon}
                 </a>
               </li>

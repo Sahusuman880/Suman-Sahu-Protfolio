@@ -38,11 +38,11 @@ function Education() {
     },
   ];
   return (
-    <section className="my-[20px]">
+    <section className="my-[50px]">
       <h1 className="md:text-[45px] text-[35px] font-bold  text-center">
         Educations
       </h1>
-      <div className="w-[15%] h-[4px] mx-auto bg-blue-600 md:my-[10px] my-[5px] md:mb-[50px] mb-[20px]"></div>
+      <div className="w-[15%] h-[4px] mx-auto bg-blue-600 md:my-[10px] my-[5px] md:mb-[10px] mb-[10px]"></div>
       {obj.map((element, index) => {
         return (
           <div

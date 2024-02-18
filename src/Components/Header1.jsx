@@ -40,7 +40,7 @@ function Header1() {
     setToggle(!toggle);
   };
   return (
-    <header className=" w-[100%]  text-white font-bold bg-[rgb(0,0,0)] sticky top-0 ">
+    <header className=" w-[100%]  text-white font-bold bg-[rgb(0,0,0)] sticky top-0 z-10 ">
       <div className="max-w-[1200px] mx-auto flex flex-row  justify-between items-center md:py-[20px] py-[15px] px-[20px] sticky">
         <div className="md:text-[20px] text-[25px]">Suman Sahu</div>
         <div className="md:block hidden">

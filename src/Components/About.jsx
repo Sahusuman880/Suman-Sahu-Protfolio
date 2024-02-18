@@ -2,7 +2,7 @@ import React from "react";
 
 function About() {
   return (
-    <section className="w-full bg-slate-200 md:py-[15px] p-[20px]">
+    <section className="w-full md:py-[15px] p-[20px]">
       <div className="max-w-[1400px] mx-auto grid md:grid-cols-2 grid-cols-1 items-center my-[10px]  bg-white">
         <div className="flex flex-wrap gap-[50px] md:justify-center md:p-0 p-10">
           <figure>

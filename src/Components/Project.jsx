@@ -35,7 +35,7 @@ function Project() {
       tech: "MERN Stack",
     },
     {
-      id: 1,
+      id: 5,
       link: "Khatabook.png",
       name: "Khatabook App",
       description:
@@ -43,7 +43,7 @@ function Project() {
       tech: "MERN Stack",
     },
     {
-      id: 1,
+      id: 6,
       link: "Khatabook.png",
       name: "Khatabook App",
       description:
@@ -51,7 +51,7 @@ function Project() {
       tech: "MERN Stack",
     },
     {
-      id: 1,
+      id: 7,
       link: "Khatabook.png",
       name: "Khatabook App",
       description:

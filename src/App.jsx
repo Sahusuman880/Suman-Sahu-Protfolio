@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import "./App.css";
 import About from "./Components/About";
 import Banner from "./Components/Banner";
@@ -9,12 +10,28 @@ import { Header } from "./Components/Header";
 import Header1 from "./Components/Header1";
 import Project from "./Components/Project";
 import Skills from "./Components/Skills";
-
+import { ItemContext } from "./Store/store";
 function App() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const savedDarkMode = localStorage.getItem("darkMode");
+    if (savedDarkMode) {
+      setIsDarkMode(savedDarkMode === "true");
+    } else {
+      setIsDarkMode(false);
+    }
+  }, []);
+
+  const toggleDarkMode = () => {
+    const newDarkMode = !isDarkMode;
+    setIsDarkMode(newDarkMode);
+    localStorage.setItem("darkMode", newDarkMode.toString());
+  };
   return (
-    <div className="bg-[rgba(22,87,217,0.3)]">
-      {/* <Header />
-      <Banner /> */}
+    <ItemContext.Provider
+      value={{ isDarkMode: isDarkMode, toggleDarkMode: toggleDarkMode }}
+    >
       <Header1></Header1>
       <Banner1 />
       <About />
@@ -23,7 +40,7 @@ function App() {
       <Project />
       <Contact />
       <Footer />
-    </div>
+    </ItemContext.Provider>
   );
 }
 

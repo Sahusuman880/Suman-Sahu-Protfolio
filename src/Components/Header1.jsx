@@ -1,8 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 import { FaAlignJustify } from "react-icons/fa6";
-
+import { FaSun } from "react-icons/fa";
+import { MdDarkMode } from "react-icons/md";
+import { ItemContext } from "../Store/store";
 function Header1() {
+  const contextObj = useContext(ItemContext);
+  const isDarkMode = contextObj.isDarkMode;
+  const toggleDarkMode = contextObj.toggleDarkMode;
   const itemsobj = [
     {
       titel: "Home",
@@ -40,8 +45,12 @@ function Header1() {
     setToggle(!toggle);
   };
   return (
-    <header className=" w-[100%]  text-white font-bold bg-[rgb(0,0,0)] sticky top-0 z-10 ">
-      <div className="max-w-[1200px] mx-auto flex flex-row  justify-between items-center md:py-[20px] py-[15px] px-[20px] sticky">
+    <header
+      className={` w-[100%] ${
+        isDarkMode ? " bg-[rgba(0,0,0,0.5)]" : " bg-[white]"
+      } font-bold  fixed top-0 text-blue-600`}
+    >
+      <div className="max-w-[1200px] mx-auto flex flex-row  justify-between items-center md:py-[20px] py-[15px] px-[20px] ">
         <div className="md:text-[20px] text-[25px]">Suman Sahu</div>
         <div className="md:block hidden">
           <ul className="flex md:gap-7 gap-3 ">
@@ -60,7 +69,24 @@ function Header1() {
         <div className=" text-[25px] md:hidden blcok" onClick={toggleClicked}>
           <FaAlignJustify />
         </div>
+        <button
+          className=" text-[25px] p-[5px]  rounded-[10px] border-[white] border-[2px] "
+          onClick={toggleDarkMode}
+        >
+          {isDarkMode === true ? (
+            <span className="flex text-[yellow] ">
+              {" "}
+              <FaSun />
+            </span>
+          ) : (
+            <span className="flex text-[black]">
+              {" "}
+              <MdDarkMode />
+            </span>
+          )}
+        </button>
       </div>
+
       {toggle ? (
         <div className="max-w-[1200px] h-[40vh] bg-white text-black flex justify-center items-center overflow-hidden">
           <ul className=" w-[80%] flex flex-col  gap-5 ">

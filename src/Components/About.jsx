@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ItemContext } from "../Store/store";
 
 function About() {
+  const contextObj = useContext(ItemContext);
+  const isDarkMode = contextObj.isDarkMode;
   return (
-    <section className="w-full md:py-[15px] p-[20px]">
-      <div className="max-w-[1400px] mx-auto grid md:grid-cols-2 grid-cols-1 items-center my-[10px]  bg-white">
+    <section
+      className={`w-full md:py-[15px] p-[20px] ${
+        isDarkMode ? "bg-gray-800" : "bg-[rgba(22,87,217,0.3)]"
+      }`}
+    >
+      <div
+        className={`max-w-[1400px] mx-auto grid md:grid-cols-2 grid-cols-1 items-center my-[10px] ${
+          isDarkMode ? "bg-[#100f0ff9] text-[white]" : "bg-white text-[black]"
+        } `}
+      >
         <div className="flex flex-wrap gap-[50px] md:justify-center md:p-0 p-10">
           <figure>
             <img

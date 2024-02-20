@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ItemContext } from "../Store/store";
 
 function Project() {
+  const contextObj = useContext(ItemContext);
+  const isDarkMode = contextObj.isDarkMode;
   const obj = [
     {
       id: 1,
@@ -60,8 +63,16 @@ function Project() {
     },
   ];
   return (
-    <section className="my-[50px]">
-      <h1 className="md:text-[45px] text-[35px] font-bold  text-center">
+    <section
+      className={`py-[50px]  ${
+        isDarkMode ? "bg-gray-800" : "bg-[rgba(22,87,217,0.3)]"
+      }`}
+    >
+      <h1
+        className={`md:text-[45px] text-[35px] font-bold  text-center  ${
+          isDarkMode ? " text-white" : " text-black"
+        }`}
+      >
         My Projects
       </h1>
       <div className="w-[15%] h-[4px] mx-auto bg-blue-600 "></div>
@@ -70,7 +81,11 @@ function Project() {
           return (
             <div
               key={element.id}
-              className=" flex flex-col  p-[10px] md:w-[310px] w-[80%] bg-white md:m-[20px] m-[10px] rounded-[15px] hover:scale-110 duration-100"
+              className={` flex flex-col  p-[10px] md:w-[310px] w-[80%]  ${
+                isDarkMode
+                  ? "bg-[#100f0ff9] text-[white]"
+                  : "bg-white text-black"
+              } md:m-[20px] m-[10px] rounded-[15px] hover:scale-110 duration-100`}
             >
               <a href="" className="">
                 <img

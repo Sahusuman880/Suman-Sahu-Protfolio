@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaFacebook } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -7,7 +7,10 @@ import { FaGithub } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaPhoneVolume } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
+import { ItemContext } from "../Store/store";
 function Contact() {
+  const contextObj = useContext(ItemContext);
+  const isDarkMode = contextObj.isDarkMode;
   const icons = [
     {
       link: "https://www.facebook.com/profile.php?id=100011899396929",
@@ -25,8 +28,16 @@ function Contact() {
     { link: "https://github.com/Sahusuman880", icon: <FaGithub /> },
   ];
   return (
-    <section className="w-full bg-[rgba(22,87,217,0.3)] md:py-[15px] md:p-[20px] p-[10px] mt-[50px]">
-      <div className="max-w-[1300px] mx-auto grid md:grid-cols-2 grid-cols-1 items-center my-[10px]  bg-white">
+    <section
+      className={`w-full  md:py-[15px]  md:p-[20px] p-[10px] ${
+        isDarkMode ? "bg-gray-800" : "bg-[rgba(22,87,217,0.3)]"
+      }`}
+    >
+      <div
+        className={`max-w-[1300px] mx-auto grid md:grid-cols-2 grid-cols-1 items-center my-[10px] ${
+          isDarkMode ? "bg-[#100f0ff9] text-[white]" : "bg-white text-[black]"
+        }`}
+      >
         <div className=" flex flex-col px-[30px] py-[20px] gap-4 md:m-[50px] m-[15px]">
           <div className="mb-[10px]">
             <h1 className="md:text-[30px] text-[20px] font-semibold">

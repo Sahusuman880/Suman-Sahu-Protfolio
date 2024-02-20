@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ItemContext } from "../Store/store";
 function Skills() {
+  const contextObj = useContext(ItemContext);
+  const isDarkMode = contextObj.isDarkMode;
   const icons = [
     {
       id: 1,
@@ -97,8 +100,16 @@ function Skills() {
   ];
 
   return (
-    <section className="mt-[50px] ">
-      <h1 className="md:text-[45px] text-[35px] font-bold  text-center">
+    <section
+      className={`pt-[50px] ${
+        isDarkMode ? "bg-gray-800" : "bg-[rgba(22,87,217,0.3)]"
+      } text-black`}
+    >
+      <h1
+        className={`md:text-[45px] text-[35px] font-bold  text-center ${
+          isDarkMode ? " text-white" : " text-black"
+        }`}
+      >
         Skills
       </h1>
       <div className="w-[9%] h-[4px] mx-auto bg-blue-600 "></div>

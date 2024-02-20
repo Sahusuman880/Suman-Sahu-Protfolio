@@ -23,8 +23,8 @@ function Banner1() {
     { link: "https://github.com/Sahusuman880", icon: <FaGithub /> },
   ];
   return (
-    <section className=" h-[90vh]  text-white bg-[url(bg-1-modified.jpg)] bg-cover bg-top flex  items-center ">
-      <div className=" md:pl-[50px] pl-[10px] md:pt-0 pt-[150px]">
+    <section className=" h-[100vh]  text-white bg-[url(bg-1-modified.jpg)] bg-cover bg-top flex  items-end ">
+      <div className=" md:pl-[50px] pl-[10px] md:pt-0 pb-[100px]">
         <h1 className="md:text-[70px] text-[40px] font-bold md:text-start text-center">
           I am Suman Sahu
         </h1>

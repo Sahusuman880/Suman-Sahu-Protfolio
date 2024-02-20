@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ItemContext } from "../Store/store";
 
 function Education() {
+  const contextObj = useContext(ItemContext);
+  const isDarkMode = contextObj.isDarkMode;
   const obj = [
     {
       id: 1,
@@ -38,7 +41,13 @@ function Education() {
     },
   ];
   return (
-    <section className="my-[50px]">
+    <section
+      className={`py-[50px] ${
+        isDarkMode
+          ? "bg-gray-800 text-white"
+          : "bg-[rgba(22,87,217,0.3)] text-black"
+      }`}
+    >
       <h1 className="md:text-[45px] text-[35px] font-bold  text-center">
         Educations
       </h1>
@@ -47,7 +56,11 @@ function Education() {
         return (
           <div
             key={element.id}
-            className=" max-w-[1400px]  bg-white  md:px-[30px] px-[15px] my-[12px] rounded-[10px] md:mx-auto mx-4"
+            className={` max-w-[1400px] ${
+              isDarkMode
+                ? "bg-[#100f0ff9] text-[white]"
+                : "bg-white text-[black]"
+            }  md:px-[30px] px-[15px] my-[12px] rounded-[10px] md:mx-auto mx-4`}
           >
             <div className="py-[10px] ">
               <div className="flex justify-between flex-wrap ">
@@ -66,7 +79,7 @@ function Education() {
 
                 <h1 className="md:text-[20px] text-[12px]">{element.year}</h1>
               </div>
-              <div className="md:text-[16px] text-[13px] my-3 text-[#5b5757]">
+              <div className="md:text-[16px] text-[13px] my-3 ">
                 {element.institute}
               </div>
               <div className="flex items-center">

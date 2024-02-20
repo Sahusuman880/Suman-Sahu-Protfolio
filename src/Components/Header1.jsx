@@ -47,18 +47,20 @@ function Header1() {
   return (
     <header
       className={` w-[100%] ${
-        isDarkMode ? " bg-[rgba(0,0,0,0.5)]" : " bg-[white]"
-      } font-bold  fixed top-0 text-blue-600`}
+        isDarkMode
+          ? " bg-[rgba(0,0,0,0.5)] text-white"
+          : " bg-[white] text-black "
+      } font-bold  fixed top-0`}
     >
       <div className="max-w-[1200px] mx-auto flex flex-row  justify-between items-center md:py-[20px] py-[15px] px-[20px] ">
-        <div className="md:text-[20px] text-[25px]">Suman Sahu</div>
-        <div className="md:block hidden">
+        <div className="md:text-[25px] text-[25px] order-1">Suman Sahu</div>
+        <div className="md:block hidden md:order-2">
           <ul className="flex md:gap-7 gap-3 ">
             {itemsobj.map((element) => {
               return (
                 <li
                   key={element.id}
-                  className="md:text-[17px] text-[12px] hover:text-blue-400 "
+                  className="md:text-[19px] text-[12px] hover:text-blue-400 "
                 >
                   <a href={element.link}>{element.titel}</a>
                 </li>
@@ -66,11 +68,14 @@ function Header1() {
             })}
           </ul>
         </div>
-        <div className=" text-[25px] md:hidden blcok" onClick={toggleClicked}>
+        <div
+          className=" text-[25px] md:hidden blcok  order-3"
+          onClick={toggleClicked}
+        >
           <FaAlignJustify />
         </div>
         <button
-          className=" text-[25px] p-[5px]  rounded-[10px] border-[white] border-[2px] "
+          className=" text-[25px] p-[5px]  rounded-[10px] border-[white] border-[2px] order-2 "
           onClick={toggleDarkMode}
         >
           {isDarkMode === true ? (
